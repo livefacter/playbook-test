@@ -1,0 +1,9 @@
+---
+- name: reboot when nslookup was fail
+  hosts: router
+  tasks:
+    - name: nslookup naver.com
+      command: nslookup naver.com
+      register: ns
+
+    - debug: var=ns
